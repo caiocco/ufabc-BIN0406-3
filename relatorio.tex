@@ -184,6 +184,16 @@ oldfontcommands,
 	name={UFABC},
 	description={Universidade Federal do ABC}
 }
+
+\newglossaryentry{ead}{
+	name={EAD},
+	description={Ensino à Distância}
+}
+
+\newglossaryentry{www}{
+	name={WWW},
+	description={World Wide Web}
+}
 %-----------------------------------------------------------
 %-----------------------------------------------------------
 % Comandos para definir ambientes tipo teorema em português 
@@ -470,7 +480,7 @@ oldfontcommands,
 \data{20 de Agosto de 2019} % data da aprovação
 %
 %------Nomes do Orientador, examinadores.  
-\orientador{ Prof. Dr. Antonio Sergio Munhoz }
+\orientador{ Prof. Dr. Antonio Sergio Munhoz}
 %\coorientador{Antonio da Silva} % opcional
 %\examinadorum{Dra. Kátia Canil}
 %\examinadordois{Professor Dr. Fernando Rocha}
@@ -584,16 +594,142 @@ oldfontcommands,
 	
 	Finalmente, a estratégia adotada para o MercadoLivre foi adaptada para a \gls{ufabc}, utilizando dados da plataforma UFABC Next\footnote{\url{https://ufabcnext.com}}, que suplantou o antigo UFABC Help!\footnote{\url{https://www.ufabchelp.me/}}, parametrizando valores com o intuito de proporcionar a melhoria dos planos de ensinos das disciplinas observadas.
 	
-	\chapter{Metodologia}
+	\chapter{Considerações metodológicas}
 	
-	O primeiro aspecto metodológico a merecer destaque é a adoção da Regra dos 100, que nada mais é do que o estabelecimento de um intervalo de confiança para 100 amostras. Considerando uma população de 200, seria possível atingir um intervalo de confiança de 93,43\% com erro de 11,24\%. A exemplo da Regra dos 50 fornecida nas especificações do trabalho\footnote{\url{https://docs.google.com/spreadsheets/d/1o_8Owjhj2WIb7zI8xsssiL_a5Xm_HvKiqtb8Aqjy3Hg/edit?usp=sharing}}, foi elaborada planilha análoga para a Regra dos 100 utilizando o \textit{software} LibreOffice.org Calc, com a posterior carga e conversão no disco virtual do Google (Google Drive), permitindo acesso remoto por meio do \textit{software} Google Sheets, por meio do endereço \url{https://docs.google.com/spreadsheets/d/1EVE47HOMK7rcjOnfLdPdV3hR6_NcSbeoKX3M4Z51jJk/edit?usp=sharing}.
+	\section{Intervalo de confiança}
+	
+	O primeiro aspecto metodológico a merecer destaque é a adoção da Regra dos 100, que nada mais é do que o estabelecimento de um intervalo de confiança para 100 amostras. Considerando uma população de 200, seria possível atingir um intervalo de confiança de 93,43\% com erro de 11,24\%. A exemplo da Regra dos 50 fornecida nas especificações do trabalho\footnote{\url{https://docs.google.com/spreadsheets/d/1o_8Owjhj2WIb7zI8xsssiL_a5Xm_HvKiqtb8Aqjy3Hg/edit?usp=sharing}}, foi elaborada planilha análoga para a Regra dos 100 utilizando o \textit{software} LibreOffice.org Calc, com a posterior carga e conversão no disco virtual do Google (Google Drive), permitindo acesso remoto por meio do \textit{software} Google Sheets, por meio do endereço \url{https://docs.google.com/spreadsheets/d/1EVE47HOMK7rcjOnfLdPdV3hR6_NcSbeoKX3M4Z51jJk/edit?usp=sharing}. A Regra dos 100 foi baseada na lógica da Regra dos 50 fornecida no escopo do trabalho disponibilizado eletronicamente na plataforma de \gls{ead} Tidia da \gls{ufabc} por meio do endereço \url{https://docs.google.com/spreadsheets/d/1o_8Owjhj2WIb7zI8xsssiL_a5Xm_HvKiqtb8Aqjy3Hg/edit?usp=sharing}.
+	
+	As planilhas estão construídas adotando o conceito de distribuição hipergeométrica, adequada para extrações casuais de uma população que são feitas sem reposição, dividida em dois atributos. O termo \textit{split} (divisão, traduzindo livremente do inglês para o português brasileiro) está presente nas planilhas em virtude dessa divisão. A distribuição hipergeométrica é conceituada por \citeonline[p. 147]{morettin2017} como:
+	
+	\begin{citacao}
+	    Essa distribuição é adequada quando consideramos extrações casuais feitas sem reposição de uma população dividida segundo dois atributos. Para ilustrar, considere uma população de $N$ objetos, $r$ dos quais têm o atributo $A$ e $N - r$ têm o atributo $B$. Um grupo de n elementos é escolhido ao acaso, sem reposição. Estamos interessados em calcular a probabilidade de que esse grupo contenha $k$ elementos com o atributo $A$.
+	\end{citacao}
+	
+	O cálculo da probabilidade mencionada por \citeonline{morettin2017} é dado pela equação a seguir, utilizando o princípio multiplicativo:
+	
+	\begin{equation}
+	    p_k = \dfrac{\begin{pmatrix}
+	r \\
+	k
+	\end{pmatrix}\begin{pmatrix}
+	N - r \\
+	n - k
+	\end{pmatrix}}{\begin{pmatrix}
+	N \\
+	n
+	\end{pmatrix}}
+	\end{equation}
+	
+	Finalmente, conforme \citeonline[p. 147]{morettin2017}, ``os pares $(k, p_k)$ constituem a distribuição hipergeométrica de probabilidades'', sendo a variável aleatória $X$ ``o número de elementos na amostra que têm o atributo $A$, então $P(X = k) = p_k$''.
 	
 	Como aponta \citeonline[p. 45]{field2009}, o valor do intervalo de confiança se traduz na ideia de que ele representa quantos intervalos possuem o valor real da média da população, em outras palavras, o valor indica a confiabilidade da estimativa:
 	
 	\begin{citacao}
-		Tipicamente, se prestarmos atenção aos intervalos de confiança de 95\% e, algumas	vezes, aos intervalos de confiança de 99\%, veremos que eles têm interpretações semelhantes: são limites construídos para que em certa percentagem das vezes (seja 95\% ou 99\%) o	valor real da média da população esteja dentro desses limites. Assim, quando você tiver um intervalo de confiança de 95\% para uma média, pense nele assim: se selecionarmos 100 amostras, calcularmos a média e, depois, determinarmos o intervalo de confiança para	aquela média (\dots), 95\% dos intervalos de confiança conterão o valor real da média da população.
+		Tipicamente, se prestarmos atenção aos intervalos de confiança de 95\% e, algumas	vezes, aos intervalos de confiança de 99\%, veremos que eles têm interpretações semelhantes: são limites construídos para que em certa percentagem das vezes (seja 95\% ou 99\%) o	valor real da média da população esteja dentro desses limites. Assim, quando você tiver um intervalo de confiança de 95\% para uma média, pense nele assim: se selecionarmos 100 amostras, calcularmos a média e, depois, determinarmos o intervalo de confiança para aquela média (\dots), 95\% dos intervalos de confiança conterão o valor real da média da população.
 	\end{citacao}
-
+	
+	Na abordagem do tema feita por \citeonline[p. 45-47]{field2009}, o cálculo do intervalo de confiança está intimamente ligado com os escores-z, porque um intervalo de confiança de 95\%, por exemplo, corresponde ao valor de $z$ de $1,96$, colocando os limites do intervalo de confiança em $-1,96$ e $+1,96$, correspondendo, portanto, a uma distribuição normal com média $0$ e desvio padrão $1$ \cite[p. 45]{field2009}. Sabendo-se que a conversão de escores em escores-z é feita por meio da \autoref{eq:escoresz}, sendo $z$ o escore-z, $X$ o valor, $\overline{X}$ a média e $s$ o desvio padrão \cite[p. 41]{field2009}.
+	
+	\begin{equation}
+	    \label{eq:escoresz}
+	    z = \dfrac{X - \overline{X}}{s}
+	\end{equation}
+	
+	Sabendo que a média está sempre no intervalo de confiança, o cálculo deste é feito reorganizando as equações, mantendo a mesma lógica empregada anteriormente \cite[p. 47]{field2009}.
+	
+	\begin{equation}
+	    z \times s = X - \overline{X}
+	\end{equation}
+	
+	\begin{equation}
+	    z \times s + \overline{X} = X
+	\end{equation}
+	
+	\section{Captura e organização dos dados}
+	
+	A coleta/captura dos dados ocorreu sem o emprego de técnicas de programação ou de automação para fazer o \textit{scrapping} dos dados\footnote{A terminologia pode ser traduzida livremente para o português brasileiro como ``raspagem'' e é empregada em outros artigos, como em \citeonline[p. 212]{limajr2012}}. Os passos adotados assim podem ser sumarizados:
+	
+	\begin{enumerate}
+	    \item Abertura do endereço desejado da \gls{www} no navegador;
+	    \item Identificação das variáveis desejadas;
+	    \item Estruturação de uma planilha capaz de acomodar os dados das variáveis verticalmente, sendo uma variável por coluna, um valor célula, de maneira que para a variável $V_1$ na coluna $A$, possuindo esta três valores, estes serão acomodados nas células $A2$, $A3$ e $A4$, ficando a célula $A1$ reservada para o título ou nome da variável;
+	    \item Preenchimento da planilha, transferindo os dados por mecanismos de cópia e colagem nativos do sistema operacional.
+	\end{enumerate}
+	
+	A \autoref{tab:variaveisml} classifica as variáveis para a amostra de $100$ avaliações do site InfoJobs para a empresa MercadoLivre. Foram coletadas as avaliações feitas pelos usuários do site no período entre 18 de Fevereiro de 2019 e 30 de Maio de 2019.
+	
+    A fim de que a amostra tivesse resultados mais homogêneos e relevantes, os dados foram previamente filtrados no próprio site pela localidade, fazendo com que fossem apresentados apenas avaliações do estado de São Paulo. 
+	
+	\begin{center}
+    \begin{longtable}{|l|l|l|}
+    \caption{Tipos de variáveis para o MercadoLivre} \label{tab:variaveisml} \\
+    
+    \hline \multicolumn{1}{|c|}{\textbf{Nome da variável}} & \multicolumn{1}{c|}{\textbf{Tipo de variável}} & \multicolumn{1}{c|}{\textbf{Subtipo de variável}} \\ \hline 
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{\bfseries \tablename\ \thetable{} -- continuado da página anterior}} \\
+    \hline \multicolumn{1}{|c|}{\textbf{Nome da variável}} & \multicolumn{1}{c|}{\textbf{Tipo de variável}} & \multicolumn{1}{c|}{\textbf{Subtipo de variável}} \\ \hline 
+    \endhead
+    
+    \hline \multicolumn{3}{r}{{Continua na próxima página}} \\
+    \endfoot
+    
+    \hline \hline
+    \endlastfoot
+    
+    Estrelas & Quantitativa & Discreta \\
+    Global & Quantitativa & Discreta \\
+    Oportunidade de promoção & Quantitativa & Discreta \\
+    Ambiente de trabalho & Quantitativa & Discreta \\
+    Conciliação com a vida familiar & Quantitativa & Discreta \\
+    Benefícios & Quantitativa & Discreta \\
+    Recomenda a Empresa a um amigo & Qualitativa & Nominal \\
+    Aprova a Diretoria & Qualitativa & Nominal \\
+    Funcionário/Ex sim/não & Qualitativa & Nominal \\
+    Data & Qualitativa & Ordinal \\
+    Cargo & Qualitativa & Nominal \\
+    Comentário & Qualitativa & Nominal \\
+    Prós & Qualitativa & Nominal \\
+    Contras & Qualitativa & Nominal \\
+    Dica a Diretoria & Qualitativa & Nominal \\
+    \end{longtable}
+    \end{center}
+    
+    A classificação adotou a conceituação realizada por \citeonline[p. 6]{pinheiro2009}:
+    
+    \begin{citacao}
+        \textbf{Variável qualitativa nominal} ou \textbf{categórica} --- seus valores possíveis são diferentes categorias não-ordenadas, em que cada observação pode ser classificada. Exemplos: raça, nacionalidade, área de atividade. \\
+        \textbf{Variável qualitativa ordinal} --- seus valores possíveis são diferentes categorias ordenadas, em que cada observação pode ser classificada. Exemplos: classe social, nível de instrução. \\
+        \textbf{Variável quantitativa discreta} --- seus valores possíveis são em geral resultados de um processo de contagem. Exemplos: número de filhos, número de séries escolares cursadas com aprovação. \\
+        \textbf{Variável quantitativa contínua} --- seus valores podem ser expressos através e números reais e varrem uma escala contínua de medição. Exemplos: renda mensal, peso, altura.
+    \end{citacao}
+    
+    No caso do MercadoLivre, a obtenção das $100$ amostras não significou grandes entraves, por outro lado, a obtenção de avaliações de alunos do sistema UFABC Next exigiu a observação de mais de um docente, mais precisamente, de $19$ (dezenove) professores:
+    
+    \begin{itemize}
+        \item A. M. Timpanaro;
+        \item A. M. Veneziani;
+        \item A. Magalhães;
+        \item A. P. de Oliveira Junior;
+        \item A. S. Munhoz;
+        \item B. Marin;
+        \item C. S. dos Santos;
+        \item E. Alejandra;
+        \item Ignat F.;
+        \item L. A. da Silva;
+        \item P. J. P. Martinez;
+        \item P. M E. Claessens;
+        \item R. H. A. H Jacobs;
+        \item R. M. Coutinho;
+        \item R. Venegeroles;
+        \item S. Camargo;
+        \item T. L. Ritchie;
+        \item V. Marvulle;
+        \item V. Perchine.
+    \end{itemize}
+	
 	\chapter{Conclusão}
 
 
