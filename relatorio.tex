@@ -542,13 +542,13 @@ oldfontcommands,
 	%
 	%
 	%--------Digite aqui o seu resumo em %Português--------------
-	%\begin{resumo}
-	%   Descrição. 
-	%
-	%   \vspace{\onelineskip}
-	%   \noindent
-	%   \textbf{Palavras-chaves}: Palavras.
-	%\end{resumo}
+	\begin{resumo}		
+	   Este trabalho analisa 100 amostras aleatórias de avaliações para a empresa MercadoLivre na plataforma InfoJobs, aplicando os conhecimentos adquiridos ao longo do curso, tais como elaboração de histogramas, construção de tabelas de frequências, distribuições, entre outros.
+	
+	   \vspace{\onelineskip}
+	   \noindent
+	   \textbf{Palavras-chaves}: estatística, probabilidade, histograma, dados, análise.
+	\end{resumo}
 	
 	
 	%
@@ -566,8 +566,8 @@ oldfontcommands,
 	%
 	%----Sumário, lista de figuras e lista de tabelas ------------
 	\tableofcontents 
-%	\newpage \listoffigures
-%	\newpage \listoftables
+	\newpage \listoffigures
+	\newpage \listoftables
 	%---------------------
 	%--------------Início do Conteúdo---------------------------
 	% o comando textual é obrigatório e marca o ponto onde começa 
@@ -594,7 +594,7 @@ oldfontcommands,
 	
 	Finalmente, a estratégia adotada para o MercadoLivre foi adaptada para a \gls{ufabc}, utilizando dados da plataforma UFABC Next\footnote{\url{https://ufabcnext.com}}, que suplantou o antigo UFABC Help!\footnote{\url{https://www.ufabchelp.me/}}, parametrizando valores com o intuito de proporcionar a melhoria dos planos de ensinos das disciplinas observadas.
 	
-	\chapter{Considerações metodológicas}
+	\chapter{Considerações metodológicas} \label{sec:metodologia}
 	
 	\section{Intervalo de confiança}
 	
@@ -706,6 +706,7 @@ oldfontcommands,
     Contras & Qualitativa & Nominal \\
     Dica a Diretoria & Qualitativa & Nominal \\
     \end{longtable}
+	\legend{Elaboração própria}
     \end{center}
     
     \subsection{Dados do UFABC Next}
@@ -734,9 +735,7 @@ oldfontcommands,
         \item V. Perchine.
     \end{itemize}
 	
-				Comentário P/N	Didática P/N
-	
-		\begin{center}
+	\begin{center}
 		\begin{longtable}{|l|l|l|}
 			\caption{Tipos de variáveis para o MercadoLivre} \label{tab:variaveisml} \\
 			
@@ -760,6 +759,7 @@ oldfontcommands,
 			Comentário P/N & Qualitativa & Nominal \\
 			Didática P/N & Qualitativa & Nominal \\
 		\end{longtable}
+		\legend{Elaboração própria}
 	\end{center}
 
 	\chapter{Análise dos dados}
@@ -771,9 +771,95 @@ oldfontcommands,
 	
 	\section{Dados do InfoJobs}
 	
-	A elaboração das tabelas de frequências para as variáveis contínuas discretas
+	Como descrito na \autoref{sec:metodologia}, a análise dos dados envolveu a elaboração de tabelas de frequências consoante as variáveis selecionadas e a construção de histogramas, com vistas à análise do comportamento da curva.
+		
+	A elaboração das tabelas de frequências para as variáveis qualitativas discretas e binomiais pode ser conferida por meio do endereço \url{https://docs.google.com/spreadsheets/d/16I1lYcc7LitdmlR3Kj3LKNXpJd9_Y8hIAKpe8Y8hAHM/edit#gid=1166636790} ou a seguir, por meio da \autoref{fig:tabmldiscretas} e da \autoref{fig:tabmlbinomiais}:
 	
+	\begin{table}
+		\centering
+		\caption{Tabelas de frequências para as variáveis discretas (amostras do InfoJobs)}
+		\label{fig:tabmldiscretas}
+		\includegraphics[width=1\linewidth]{img/tab_ml_discretas}
+		\legend{Elaboração própria}
+	\end{table}
+	
+	\begin{table}
+		\centering
+		\caption{Tabelas de frequências para as variáveis binomiais (amostras do InfoJobs)}
+		\label{fig:tabmlbinomiais}
+		\includegraphics[width=1\linewidth]{img/tab_ml_binomiais}
+		\legend{Elaboração própria}
+	\end{table}
+
+	Os histogramas para variáveis podem ser conferidos nas figuras a seguir.
+	
+	\begin{figure}[h]
+		\centering
+		\caption{Histograma para a variável ``Frequência estrelas geral''}
+		\label{fig:estrelas}
+		\includegraphics[width=1\linewidth]{img/freq_estrelas_geral}
+		\legend{Elaboração própria}
+	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+		\caption{Histograma para a variável ``Ambiente de trabalho''}
+		\label{fig:ambientetrabalho}
+		\includegraphics[width=1\linewidth]{img/ambiente_trabalho}
+		\legend{Elaboração própria}
+	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\caption{Histograma para a variável ``Benefícios''}
+		\label{fig:beneficios}
+		\includegraphics[width=1\linewidth]{img/beneficios}
+		\legend{Elaboração própria}
+	\end{figure}
+		
+	\begin{figure}
+		\centering
+		\caption{Histograma para a variável ``Conciliação vida familiar''}
+		\label{fig:familiar}
+		\includegraphics[width=1\linewidth]{img/conc_vida_familiar}
+		\legend{Elaboração própria}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\caption{Histograma para a variável ``Oportunidade de promoção''}
+		\label{fig:promocao}
+		\includegraphics[width=1\linewidth]{img/oportunidade_promo}
+		\legend{Elaboração própria}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\caption{Histograma para a variável ``Aprova a diretoria''}
+		\label{fig:diretoria}
+		\includegraphics[width=0.5\linewidth]{img/aprova_diretoria}
+		\legend{Elaboração própria}
+	\end{figure}
+
+	\begin{figure}
+		\centering
+		\caption{Histograma para a variável ``Funcionário''}
+		\label{fig:vinculo}
+		\includegraphics[width=0.5\linewidth]{img/funcionario}
+		\legend{Elaboração própria}
+	\end{figure}
+
+	\begin{figure}
+		\centering
+		\caption{Histograma para a variável ``Recomenda a um amigo''}
+		\label{fig:recomendacao}
+		\includegraphics[width=0.5\linewidth]{img/recomenda_amigo}
+		\legend{Elaboração própria}
+	\end{figure}
+
 	\section{Dados do UFABC Next}
+	
+	
 	
 	\chapter{Conclusão}
 
