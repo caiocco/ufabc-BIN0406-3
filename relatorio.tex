@@ -656,6 +656,15 @@ oldfontcommands,
 	    \item Estruturação de uma planilha capaz de acomodar os dados das variáveis verticalmente, sendo uma variável por coluna, um valor célula, de maneira que para a variável $V_1$ na coluna $A$, possuindo esta três valores, estes serão acomodados nas células $A2$, $A3$ e $A4$, ficando a célula $A1$ reservada para o título ou nome da variável;
 	    \item Preenchimento da planilha, transferindo os dados por mecanismos de cópia e colagem nativos do sistema operacional.
 	\end{enumerate}
+
+    A classificação das variáveis adotou a conceituação realizada por \citeonline[p. 6]{pinheiro2009}:
+	
+	\begin{citacao}
+		\textbf{Variável qualitativa nominal} ou \textbf{categórica} --- seus valores possíveis são diferentes categorias não-ordenadas, em que cada observação pode ser classificada. Exemplos: raça, nacionalidade, área de atividade. \\
+		\textbf{Variável qualitativa ordinal} --- seus valores possíveis são diferentes categorias ordenadas, em que cada observação pode ser classificada. Exemplos: classe social, nível de instrução. \\
+		\textbf{Variável quantitativa discreta} --- seus valores possíveis são em geral resultados de um processo de contagem. Exemplos: número de filhos, número de séries escolares cursadas com aprovação. \\
+		\textbf{Variável quantitativa contínua} --- seus valores podem ser expressos através e números reais e varrem uma escala contínua de medição. Exemplos: renda mensal, peso, altura.
+	\end{citacao}
 	
 	\subsection{Dados do InfoJobs}
 	
@@ -699,16 +708,7 @@ oldfontcommands,
     \end{longtable}
     \end{center}
     
-    A classificação adotou a conceituação realizada por \citeonline[p. 6]{pinheiro2009}:
-    
-    \begin{citacao}
-        \textbf{Variável qualitativa nominal} ou \textbf{categórica} --- seus valores possíveis são diferentes categorias não-ordenadas, em que cada observação pode ser classificada. Exemplos: raça, nacionalidade, área de atividade. \\
-        \textbf{Variável qualitativa ordinal} --- seus valores possíveis são diferentes categorias ordenadas, em que cada observação pode ser classificada. Exemplos: classe social, nível de instrução. \\
-        \textbf{Variável quantitativa discreta} --- seus valores possíveis são em geral resultados de um processo de contagem. Exemplos: número de filhos, número de séries escolares cursadas com aprovação. \\
-        \textbf{Variável quantitativa contínua} --- seus valores podem ser expressos através e números reais e varrem uma escala contínua de medição. Exemplos: renda mensal, peso, altura.
-    \end{citacao}
-    
-    \subsection{Dados do InfoJobs}
+    \subsection{Dados do UFABC Next}
     
     No caso do MercadoLivre, a obtenção das $100$ amostras não significou grandes entraves, por outro lado, a obtenção de avaliações de alunos do sistema UFABC Next exigiu a observação de mais de um docente, mais precisamente, de $19$ (dezenove) professores:
     
@@ -734,6 +734,34 @@ oldfontcommands,
         \item V. Perchine.
     \end{itemize}
 	
+				Comentário P/N	Didática P/N
+	
+		\begin{center}
+		\begin{longtable}{|l|l|l|}
+			\caption{Tipos de variáveis para o MercadoLivre} \label{tab:variaveisml} \\
+			
+			\hline \multicolumn{1}{|c|}{\textbf{Nome da variável}} & \multicolumn{1}{c|}{\textbf{Tipo de variável}} & \multicolumn{1}{c|}{\textbf{Subtipo de variável}} \\ \hline 
+			\endfirsthead
+			
+			\multicolumn{3}{c}%
+			{{\bfseries \tablename\ \thetable{} -- continuado da página anterior}} \\
+			\hline \multicolumn{1}{|c|}{\textbf{Nome da variável}} & \multicolumn{1}{c|}{\textbf{Tipo de variável}} & \multicolumn{1}{c|}{\textbf{Subtipo de variável}} \\ \hline 
+			\endhead
+			
+			\hline \multicolumn{3}{r}{{Continua na próxima página}} \\
+			\endfoot
+			
+			\hline \hline
+			\endlastfoot
+			
+			Professor & Qualitativa & Nominal \\
+			Cobra Presença & Quantitativa & Discreta \\
+			Conceito & Qualitativa & Ordinal \\
+			Comentário P/N & Qualitativa & Nominal \\
+			Didática P/N & Qualitativa & Nominal \\
+		\end{longtable}
+	\end{center}
+
 	\chapter{Análise dos dados}
 	% Responde itens 3, 4 e 5 e 7
 	
