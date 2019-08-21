@@ -655,6 +655,12 @@ oldfontcommands,
 	    z \times s + \overline{X} = X
 	\end{equation}
 	
+	Outro aspecto metodológico importante diz respeito à análise da curva, parte integrante da conclusão deste trabalho (\autoref{sec:conclusao}). Para avaliar se identificaríamos uma curva de sino, consideramos a definição de \citeonline[p. 119]{pinheiro2009}, que denomina a curva como Normal ou Gaussiana:
+	
+	\begin{citacao}
+		Por várias razões, a distribuição Normal é o modelo mais usado em todo o Cálculo de Probabilidades. A curva Normal ou Gaussiana descreve de forma muito adequada o comportamento de uma variável que se distribui de forma simétrica em relação a um valor central. Os dois parâmetros que a caracterizam são a média $\mu$, que especifica o seu valor central, e a variância $\sigma^2$, que define a sua variabilidade.
+	\end{citacao}
+	
 	\section{Captura e organização dos dados}
 
 	A coleta/captura dos dados ocorreu sem o emprego de técnicas de programação ou de automação para fazer o \textit{scrapping} dos dados\footnote{A terminologia pode ser traduzida livremente para o português brasileiro como ``raspagem'' e é empregada em outros artigos, como em \citeonline[p. 212]{limajr2012}}. Os passos adotados assim podem ser sumarizados:
@@ -744,9 +750,11 @@ oldfontcommands,
         \item V. Perchine.
     \end{itemize}
 	
+	As variáveis das $100$ amostras estão classificadas na \autoref{tab:variaveisufabc}, análoga à classificação feita para os dados do InfoJobs para a empresa MercadoLivre.
+	
 	\begin{center}
 		\begin{longtable}{|l|l|l|}
-			\caption{Tipos de variáveis para o MercadoLivre} \label{tab:variaveisml} \\
+			\caption{Tipos de variáveis para o UFABC Next} \label{tab:variaveisufabc} \\
 			
 			\hline \multicolumn{1}{|c|}{\textbf{Nome da variável}} & \multicolumn{1}{c|}{\textbf{Tipo de variável}} & \multicolumn{1}{c|}{\textbf{Subtipo de variável}} \\ \hline 
 			\endfirsthead
@@ -951,7 +959,7 @@ oldfontcommands,
 
 	\begin{center}
 		\begin{longtable}{|p{2cm}|r|r|}
-			\caption{Avaliações cadastradas pelos alunos} \label{tab:variaveisml} \\
+			\caption{Avaliações cadastradas pelos alunos} \label{tab:avaliacoes} \\
 			
 			\hline \multicolumn{1}{|c|}{\textbf{}} & \multicolumn{1}{c|}{\textbf{Avaliação Geral*}} & \multicolumn{1}{c|}{\textbf{Avaliação da Didática**}} \\ \hline 
 			\endfirsthead
@@ -991,9 +999,11 @@ oldfontcommands,
 		\legend{Elaboração própria}
 	\end{figure}
 
-	\chapter{Conclusão}
+	\chapter{Conclusão} \label{sec:conclusao}
 	
 	O trabalho se propôs a aplicar os conhecimentos discutidos ao longo do curso, expandindo uma das primeiras atividades aplicadas, que consistiu na coleta, tratamento e análise de dados do site InfoJobs para a empresa MercadoLivre. Foi feito um trabalho de coleta e análise de dados, sendo elaborado um banco de dados contendo uma amostra aleatória de 100 mensagens deixadas no site. A análise destes dados foi importante para aplicarmos os conceitos aprendidos durante o curso. O principal elemento trabalhado foi a utilização da regra dos 50 e dos 100. Através dela foi possível estabelecer um intervalo de confiança para as 100 amostras. Caso fosse feita uma população de 200, seria possível atingir um intervalo de confiança de 93,43\% com erro de 11,24\%. Apesar da amostra ter sido elaborada de forma aleatória, os histogramas não apresentaram um formato de curva de sino, o que indica que os parâmetros analisados não apresentavam uma distribuição normal ou que outra metodologia de coleta poderia ter sido adotada.
+	
+	Com relação aos dados do UFABC Next, para a amostra coletada, as avaliações foram sobretudo positivas (78 no geral e 60 na didática) e os conceitos acima de D (25 para A, 26 para B, 24 para C). A baixa quantidade de avaliações por professor e a necessidade de selecionar múltiplos professores tornou difícil a sugestão de melhorias nos planos de ensino. Consideramos que a manutenção das atuais práticas pode ser uma medida suficiente, até que os processos de avaliação colaborativa atinjam um volume maior de dados.
 
 	%===============================================================================
 	%
