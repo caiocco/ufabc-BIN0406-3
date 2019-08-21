@@ -127,12 +127,15 @@ oldfontcommands,
 
 % Caio - preciso de tabelas longas
 % http://www.tex.ac.uk/FAQ-figurehere.html
+\usepackage{colortbl}
+\usepackage[table]{xcolor}
 \usepackage{longtable}
 
 % Caio - quero alternar as cores das linhas da tabela
 % https://tex.stackexchange.com/questions/107944/alternate-row-colors-in-longtable
 \usepackage[table]{xcolor}
 \definecolor{lightgray}{gray}{0.9}
+%\rowcolors{1}{lightgray}{}
 
 % Caio - tentando melhorar o posicionamento das imagens
 \usepackage{float}
@@ -157,15 +160,21 @@ oldfontcommands,
 \hypersetup{
 	%pagebackref=true,
 	pdftitle={Trabalho de Introdução à Probabilidade e Esatística}, 
-	pdfauthor={Vários},
+	pdfauthor={Caio César e Carolina Horta},
 	pdfsubject={estatística},
 	colorlinks=false,      		% false: boxed links; true: colored links
 	linkcolor=blue,          	% color of internal links
 	citecolor=blue,        		% color of links to bibliography
 	filecolor=magenta,      	% color of file links
 	urlcolor=blue,
-	bookmarksdepth=4
+	bookmarksdepth=4,
+	breaklinks=true
 }
+
+% Caio - preciso quebrar URLs muito longas
+% https://tex.stackexchange.com/questions/3033/forcing-linebreaks-in-url
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage[anythingbreaks]{breakurl}
 
 % Caio - separação silábica
 %\hyphenation{}
@@ -553,15 +562,15 @@ oldfontcommands,
 	
 	%
 	% --- resumo em inglês (abstract) ---
-	%\begin{resumo}[Abstract]
-	%   \begin{otherlanguage*}{english}
-	%      Description.
-	%
-	%      \vspace{\onelineskip}
-	%      \noindent
-	%      \textbf{Keywords}: Words.
-	%   \end{otherlanguage*}
-	%\end{resumo}
+	\begin{resumo}[Abstract]
+	   \begin{otherlanguage*}{english}
+	      This work analyzes 100 random samples of evaluations for MercadoLivre company in InfoJobs platform, applying the knowledge acquired during the course, such as histograms elaboration, frequency tables construction, distributions, among others.
+	
+	      \vspace{\onelineskip}
+	      \noindent
+	      \textbf{Keywords}: statistics, probability, histogram, data, analysis.
+	   \end{otherlanguage*}
+	\end{resumo}
 	
 	%
 	%----Sumário, lista de figuras e lista de tabelas ------------
@@ -793,7 +802,7 @@ oldfontcommands,
 
 	Os histogramas para variáveis podem ser conferidos nas figuras a seguir.
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
 		\caption{Histograma para a variável ``Frequência estrelas geral''}
 		\label{fig:estrelas}
@@ -801,7 +810,7 @@ oldfontcommands,
 		\legend{Elaboração própria}
 	\end{figure}
 
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
 		\caption{Histograma para a variável ``Ambiente de trabalho''}
 		\label{fig:ambientetrabalho}
@@ -809,7 +818,7 @@ oldfontcommands,
 		\legend{Elaboração própria}
 	\end{figure}
 	
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
 		\caption{Histograma para a variável ``Benefícios''}
 		\label{fig:beneficios}
@@ -817,7 +826,7 @@ oldfontcommands,
 		\legend{Elaboração própria}
 	\end{figure}
 		
-	\begin{figure}
+	\begin{figure}[H]
 		\centering
 		\caption{Histograma para a variável ``Conciliação vida familiar''}
 		\label{fig:familiar}
@@ -825,7 +834,7 @@ oldfontcommands,
 		\legend{Elaboração própria}
 	\end{figure}
 	
-	\begin{figure}
+	\begin{figure}[H]
 		\centering
 		\caption{Histograma para a variável ``Oportunidade de promoção''}
 		\label{fig:promocao}
@@ -833,7 +842,7 @@ oldfontcommands,
 		\legend{Elaboração própria}
 	\end{figure}
 	
-	\begin{figure}
+	\begin{figure}[H]
 		\centering
 		\caption{Histograma para a variável ``Aprova a diretoria''}
 		\label{fig:diretoria}
@@ -841,7 +850,7 @@ oldfontcommands,
 		\legend{Elaboração própria}
 	\end{figure}
 
-	\begin{figure}
+	\begin{figure}[H]
 		\centering
 		\caption{Histograma para a variável ``Funcionário''}
 		\label{fig:vinculo}
@@ -849,7 +858,7 @@ oldfontcommands,
 		\legend{Elaboração própria}
 	\end{figure}
 
-	\begin{figure}
+	\begin{figure}[H]
 		\centering
 		\caption{Histograma para a variável ``Recomenda a um amigo''}
 		\label{fig:recomendacao}
@@ -859,10 +868,132 @@ oldfontcommands,
 
 	\section{Dados do UFABC Next}
 	
+	A avaliação dos dados envolveu a elaboração de três tabelas e três gráficos, que podem ser consultados online em \href{https://docs.google.com/spreadsheets/d/16I1lYcc7LitdmlR3Kj3LKNXpJd9_Y8hIAKpe8Y8hAHM/edit#gid=871162157}{https://docs.google.com/spreadsheets/d/\\16I1lYcc7LitdmlR3Kj3LKNXpJd9\_Y8hIAKpe8Y8hAHM/edit\#gid=871162157} ou a seguir.
 	
-	
-	\chapter{Conclusão}
+	\begin{center}
+		\begin{longtable}{|l|r|}
+			\caption{Quantidade de avaliações por professor} \label{tab:profaval} \\
+			
+			\hline \multicolumn{1}{|c|}{\textbf{Professor}} & \multicolumn{1}{c|}{\textbf{Quantidade de avaliações}} \\ \hline 
+			\endfirsthead
+			
+			\multicolumn{2}{c}%
+			{{\bfseries \tablename\ \thetable{} -- continuado da página anterior}} \\
+			\hline \multicolumn{1}{|c|}{\textbf{Professor}} & \multicolumn{1}{c|}{\textbf{Quantidade de avaliações}} \\ \hline 
+			\endhead
+			
+			\hline \multicolumn{2}{r}{{Continua na próxima página}} \\
+			\endfoot
+			
+			\hline \hline
+			\endlastfoot
+			
+			A. M. Timpanaro & 14 \\
+			A. M. Veneziani & 2 \\
+			A. Magalhães & 2 \\
+			A. P. de Oliveira Junior & 14 \\
+			A. S. Munhoz & 8 \\
+			B. Marin & 3 \\
+			C. S. dos Santos & 2 \\
+			E. Alejandra & 4 \\
+			Ignat F. & 3 \\
+			L. A. da Silva & 1 \\
+			P. J. P. Martinez & 4 \\
+			P. M. E. Claessens & 1 \\
+			R. H. A. H. Jacobs & 2 \\
+			R. M. Coutinho & 4 \\
+			R. Venegeroles & 4 \\
+			S. Camargo & 2 \\
+			T. L. Ritchie & 10 \\
+			V. Marvulle & 4 \\
+			V. Perchine & 16 \\ \hline
+			\textbf{Total} & 100 \\
+		\end{longtable}
+		\legend{Elaboração própria}
+	\end{center}
 
+	\begin{center}
+	\begin{longtable}{|l|r|}
+		\caption{Conceitos nas disciplinas ministradas} \label{tab:profaval} \\
+		
+		\hline \multicolumn{1}{|c|}{\textbf{Conceito}} & \multicolumn{1}{c|}{\textbf{Quantidade na amostra}} \\ \hline 
+		\endfirsthead
+		
+		\multicolumn{2}{c}%
+		{{\bfseries \tablename\ \thetable{} -- continuado da página anterior}} \\
+		\hline \multicolumn{1}{|c|}{\textbf{Conceito}} & \multicolumn{1}{c|}{\textbf{Quantidade na amostra}} \\ \hline 
+		\endhead
+		
+		\hline \multicolumn{2}{r}{{Continua na próxima página}} \\
+		\endfoot
+		
+		\hline \hline
+		\endlastfoot
+		
+		A & 25 \\
+		B & 26 \\
+		C & 24 \\
+		D & 11 \\
+		F & 13 \\
+		O & 1 \\ \hline
+		\textbf{Total} & 100
+	\end{longtable}
+	\legend{Elaboração própria}
+	\end{center}
+
+	\begin{figure}[H]
+		\centering
+		\caption{Histograma para a variável ``Conceito''}
+		\label{fig:conceito}
+		\includegraphics[width=0.5\linewidth]{img/ufabc_conceito}
+		\legend{Elaboração própria}
+	\end{figure}
+
+	\begin{center}
+		\begin{longtable}{|p{2cm}|r|r|}
+			\caption{Avaliações cadastradas pelos alunos} \label{tab:variaveisml} \\
+			
+			\hline \multicolumn{1}{|c|}{\textbf{}} & \multicolumn{1}{c|}{\textbf{Avaliação Geral*}} & \multicolumn{1}{c|}{\textbf{Avaliação da Didática**}} \\ \hline 
+			\endfirsthead
+			
+			\multicolumn{3}{c}%
+			{{\bfseries \tablename\ \thetable{} -- continuado da página anterior}} \\
+			\hline \multicolumn{1}{|c|}{\textbf{}} & \multicolumn{1}{c|}{\textbf{Avaliação Geral*}} & \multicolumn{1}{c|}{\textbf{Avaliação da Didática**}} \\ \hline 
+			\endhead
+			
+			\hline \multicolumn{3}{r}{{Continua na próxima página}} \\
+			\endfoot
+			
+			\hline \hline
+			\endlastfoot
+			
+			Positiva & 78 & 63 \\
+			Negativa & 22 & 37 \\ \hline
+			\textbf{Total} & 100 & 100 \\
+		\end{longtable}
+		* Comentário Positivo ou Negativo; ** Com base no comentário
+		\legend{Elaboração própria}
+	\end{center}
+
+	\begin{figure}[H]
+		\centering
+		\caption{Histograma para a variável ``Comentário P/N''}
+		\label{fig:recomendacao}
+		\includegraphics[width=0.5\linewidth]{img/ufabc_geral}
+		\legend{Elaboração própria}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Histograma para a variável ``Didática P/N''}
+		\label{fig:recomendacao}
+		\includegraphics[width=0.5\linewidth]{img/ufabc_didatica}
+		\legend{Elaboração própria}
+	\end{figure}
+
+	\chapter{Conclusão}
+	
+	O trabalho se propôs a aplicar os conhecimentos discutidos ao longo do curso, expandindo uma das primeiras atividades aplicadas, que consistiu na coleta, tratamento e análise de dados do site InfoJobs para a empresa MercadoLivre. Foi feito um trabalho de coleta e análise de dados, sendo elaborado um banco de dados contendo uma amostra aleatória de 100 mensagens deixadas no site. A análise destes dados foi importante para aplicarmos os conceitos aprendidos durante o curso. O principal elemento trabalhado foi a utilização da regra dos 50 e dos 100. Através dela foi possível estabelecer um intervalo de confiança para as 100 amostras. Caso fosse feita uma população de 200, seria possível atingir um intervalo de confiança de 93,43\% com erro de 11,24\%. Apesar da amostra ter sido elaborada de forma aleatória, os histogramas não apresentaram um formato de curva de sino, o que indica que os parâmetros analisados não apresentavam uma distribuição normal ou que outra metodologia de coleta poderia ter sido adotada.
 
 	%===============================================================================
 	%
